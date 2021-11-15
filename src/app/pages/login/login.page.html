@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <button ion-button icon-left [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+    </button>
+    <b class="ion-text-center">
+      <h4>TeLlevoAPP</h4>
+    </b>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="viaje.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input type="text" [(ngModel)]="viaje.apellido"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Lugar de Encuenro</ion-label>
+    <ion-input type="text" [(ngModel)]="viaje.lugar"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Destino</ion-label>
+    <ion-input type="text" [(ngModel)]="viaje.destino"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Cant.Personas</ion-label>
+    <ion-input type="number" min="1" max="3" [(ngModel)]="viaje.personas"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Hora</ion-label>
+    <ion-datetime displayFormat="HH:mm">
+      <ion-input type="date" [(ngModel)]="viaje.hora"></ion-input>
+    </ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Chofer</ion-label>
+    <ion-select placeholder="Seleccione un Chofer" [(ngModel)]="viaje.Chofer">
+      <ion-select-option *ngFor="let chofer of choferes" [value]="chofer.id">{{chofer.name}}</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Fecha</ion-label>
+    <ion-datetime value="2021-09-30" min="2021-09-30" max="2022"
+    displayFormat="DDD. MMM DD, YY"
+    monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+    dayShortNames="Lun, Mar ,Mie ,Jue, Vie ">
+    </ion-datetime>
+    <ion-input [(ngModel)]="viaje.fecha"></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-button shape="block" (click)="pedir()">
+          PEDIR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+

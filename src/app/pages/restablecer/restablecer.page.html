@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button icon-left [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+<ion-content id="container">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password"[(ngModel)]="nueva.clave"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nueva Contraseña</ion-label>
+        <ion-input type="password"[(ngModel)]="nueva.nclave"></ion-input>
+      </ion-item>        
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="restablecer()">Restablecer</ion-button>
+</ion-content>
